@@ -8,7 +8,7 @@ class Post < ApplicationRecord
     User.find(author.id).increment!(:posts_counter)
   end
 
-  def get_recent_comments
+  def recent_comments
     Comment.where(post: post.id).limit(5)
   end
 end
