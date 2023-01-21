@@ -220,14 +220,16 @@ If you like this project, kindly give it a star ⭐️
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- ACKNOWLEDGEMENTS -->
-<!--
+
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-> Give credit to everyone who inspired your codebase.
+I would like to thank:
+- [Microverse](microverse.org)
+- Code Reviewers
+- [anderson](https://github.com/andersonlebon)
 
-I would like to thank...
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p> -->
 
 
 
