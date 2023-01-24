@@ -15,7 +15,7 @@ RSpec.describe PostsController, type: :request do
 
       it 'return index view text' do
         get '/users/24/posts/'
-        expect(response.body).to include('Posts index method')
+        expect(response.body).to include('Here is a list of posts for a given user')
       end
     end
 
@@ -32,7 +32,7 @@ RSpec.describe PostsController, type: :request do
 
       it 'return show view text' do
         get '/users/24/posts/123'
-        expect(response.body).to include('Posts show method')
+        expect(response.body).to include('Here is a single post from list of posts for a given user')
       end
     end
   end

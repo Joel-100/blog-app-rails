@@ -15,7 +15,7 @@ RSpec.describe UsersController, type: :request do
 
       it 'return index view text' do
         get '/'
-        expect(response.body).to include('Users Index action')
+        expect(response.body).to include('Here is a list of users')
       end
     end
 
@@ -32,7 +32,7 @@ RSpec.describe UsersController, type: :request do
 
       it 'return show view text' do
         get '/users/12'
-        expect(response.body).to include('Users show method')
+        expect(response.body).to include('Here is a user informations for a given user')
       end
     end
   end
