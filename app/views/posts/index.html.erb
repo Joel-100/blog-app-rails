@@ -1,1 +1,13 @@
-<h1>Here is a list of posts for a given user</h1>
+<section>
+  <%= render 'shared/user', user: @user %>
+</section>
+<section>
+  <% @posts.each do |post| %>
+    <%= render 'shared/post', post: post %>
+    <div class="card mt-2">
+      <div class="card-body">
+        <%= render partial: 'shared/comment', collection: post.recent_five_comments %>
+      </div>
+    </div>
+  <% end %>
+</section>

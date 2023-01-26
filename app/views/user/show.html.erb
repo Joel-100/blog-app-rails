@@ -1,1 +1,13 @@
-<h1>Here is a user informations for a given user</h1>
+<section>
+  <%= render partial: "shared/user", locals: { user: @user }%>
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Bio</h5>
+      <p class="card-text"><%= @user.bio %></p>
+    </div>
+  </div>
+<section>
+<section>
+  <%= render partial: 'shared/post', collection: @user.recent_three_posts %>
+  <%= link_to 'See all posts', user_posts_path(@user), class: "btn btn-secondary stretched-link d-block mt-3 mx-auto", style: "width: 10em" %>
+</section>
