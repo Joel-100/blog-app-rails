@@ -1,0 +1,6 @@
+<h1>Create new Post</h1>
+<%= form_with model: @post, url: user_posts_path, scope: :post do |f| %>
+  <%= f.text_field :title, class: "form-control" %>
+  <%= f.text_area :text, class: "form-control" %>
+  <%= f.submit %>
+<% end %>

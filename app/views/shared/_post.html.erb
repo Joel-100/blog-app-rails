@@ -1,6 +1,6 @@
 <div class="card mt-3">
   <div class="card-header">
-    <%= link_to "Post ##{post.id}", "/users/#{@user.id}/posts/#{post.id}" %>
+    <%= link_to "Post ##{post.id}", user_post_path(post.author_id, post.id) %>
   </div>
   <div class="card-body d-flex flex-column">
     <h5 class="card-title"><%= post.title %></h5>
