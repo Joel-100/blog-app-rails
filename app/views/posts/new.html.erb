@@ -1,5 +1,5 @@
 <h1>Create new Post</h1>
-<%= bootstrap_form_with model: post, url: user_posts_path, method: :post, scope: :post do |f| %>
+<%= bootstrap_form_with model: @post, url: user_posts_path, scope: :post do |f| %>
   <%= f.text_field :title %>
   <%= f.text_area :text %>
   <%= f.submit %>
