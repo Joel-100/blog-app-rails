@@ -156,8 +156,8 @@ Example:
 - LinkedIn: [@Joel Kugonza](https://www.linkedin.com/in/joel-kugonza/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-FUTURE FEATURES -->
+<!-- 
+FUTURE FEATURES  -->
 
 ## 🔭 Future Features <a name="future-features"></a>
 
@@ -194,7 +194,7 @@ If you like this project, kindly give it a star ⭐️
 I would like to thank:
 - [Microverse](microverse.org)
 - Code Reviewers
-- [anderson](https://github.com/andersonlebon)
+- []()
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
