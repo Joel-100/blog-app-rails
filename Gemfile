@@ -8,6 +8,8 @@ gem 'rails', '~> 7.0.4'
 
 gem 'rubocop', '>= 1.0', '< 2.0'
 
+gem 'faker'
+
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem 'sprockets-rails'
 
@@ -75,3 +77,5 @@ group :test do
   gem 'selenium-webdriver'
   gem 'webdrivers'
 end
+
+gem 'bootstrap', '~> 5.1.3'
