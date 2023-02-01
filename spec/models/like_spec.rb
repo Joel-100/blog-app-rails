@@ -1,10 +1,14 @@
 require 'rails_helper'
 
 RSpec.describe Like, type: :model do
-  it 'update_likes_counter should increment likes_counter' do
-    user = User.create(name: 'Joel', posts_counter: 0)
-    post = Post.create(title: 'First post on the blog', author: user, comments_counter: 0, likes_counter: 1)
-    Like.create(post:, author: user)
-    expect(post.likes_counter).to eq(1)
+  before(:all) do
+    @user = User.new(name: 'Lilly', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Poland.')
+    @post = Post.new(title: 'My first post', text: 'This is my first post.', author: @user, comments_counter: 4,
+                     likes_counter: 6)
+  end
+
+  it 'should increment likes_counter by 1' do
+    @post.increment!(:likes_counter)
+    expect(@post.likes_counter).to eq(7)
   end
 end

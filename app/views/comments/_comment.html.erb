@@ -1,4 +1,0 @@
-<%= form_with model: @comment, url: user_post_comments_path(@post.author_id, post_id: @post.id) do |f| %>
-  <%= f.text_area :text, hide_label: true, placeholder: "Leave a comment...", class: "mt-3 form-control" %>
-  <%= f.submit "Add a comment", class: "mt-3 btn btn-secondary" %>
-<% end %>

@@ -1,35 +1,42 @@
 require 'rails_helper'
 
 RSpec.describe 'Posts', type: :request do
-  describe 'GET /users/:id/posts' do
-    before(:example) { get '/users/12/posts' }
+  before(:each) do
+    @user =
+      User.create(
+        name: 'John',
+        photo: 'https://unsplash.com/photos/F_-0BxGuVvo',
+        bio: 'I am a frontend developer',
+        posts_counter: 4
+      )
 
-    it 'returns http success' do
-      expect(response).to have_http_status(:success)
+    @post =
+      Post.create(
+        author: @user,
+        title: 'My first post',
+        text: 'This is my first post',
+        comments_counter: 1,
+        likes_counter: 3
+      )
+  end
+
+  context 'GET #index for a user post' do
+    before(:each) { get user_posts_path(@user) }
+    it 'is a success' do
+      expect(response).to have_http_status(:ok)
     end
-
-    it 'renders the :index template' do
-      expect(response).to render_template(:index)
-    end
-
-    it 'display header in the body response' do
-      expect(response.body).to include('Here is a list of posts for a given user')
+    it 'renders index template' do
+      expect(response).to render_template('index')
     end
   end
 
-  describe 'GET /users/:id/posts/:id' do
-    before(:example) { get '/users/12/posts/24' }
-
-    it 'returns http success' do
-      expect(response).to have_http_status(:success)
+  context 'GET #show' do
+    before(:each) { get user_post_path(@user, @post) }
+    it 'is a success' do
+      expect(response).to have_http_status(:ok)
     end
-
-    it 'renders the :show template' do
-      expect(response).to render_template(:show)
-    end
-
-    it 'display header in the body response' do
-      expect(response.body).to include('Here is a single post from list of posts for a given user')
+    it 'renders show template' do
+      expect(response).to render_template('show')
     end
   end
 end

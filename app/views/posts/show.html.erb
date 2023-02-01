@@ -1,22 +1,23 @@
 <section>
-  <div class="card">
-    <div class="card-body">
-      <div class="d-flex">
-        <h5 class="card-title">Post #<%= @post.id %> by <%= @post.author.name %></h5>
-        <p class="card-text ms-auto"><small class="text-muted">Comments: <%= @post.comments_counter %> </small> <small class="text-muted">Likes: <%= @post.likes_counter %></small></p>
-      </div>
-      <p class="card-text"><%= @post.text %></p>
-    </div>
+  <div class='list-posts'>
+    <h3><%= @post.title %> by <%= @post.author.name %> </h3>
+    <p><%= @post.text %></p>
+    <span class='like-comment'>
+      Comments: <%= @post.comments_counter || 0 %>, 
+      Likes: <%= @post.likes_counter || 0 %> 
+    </span>
   </div>
-</section>
-<section>
-  <div class="card mt-2">
-    <div class="card-body">
-      <%= render partial: "shared/comment", collection: @post.comments %>
-    </div>
+  <ul class='post-comment'>      
+    <% if @post.comments.length == 0 %>
+      <p>No comments added!</p>
+    <% else %>
+      <% @post.comments.each do |comment| %>
+        <li><%= comment.author.name %>: <%= comment.text %></li>
+      <% end %>
+    <% end %>
+  </ul>
+  <div>
+  <%= render "likes/add_like" %>
   </div>
-</section>
-<section class="mt-3">
-  <%= render "likes/like" %>
-  <%= render "comments/comment" %>
+  <%= render "comments/add_comment" %>
 </section>
